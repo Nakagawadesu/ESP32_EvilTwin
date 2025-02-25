@@ -40,8 +40,8 @@ O código original (captdns.c) foi escrito por cornelis-61 (se encontrá-lo pagu
 > Aviso: Este projeto é estritamente educacional e não deve ser utilizado para fins ilegais. O uso indevido pode violar leis de privacidade e segurança cibernética.
 
 ## O que falta para ser um ataque completo :bulb:
-- DeAutenticação de pessoas próximas
-- Uma página web amis convicente
+- Deautenticação de pessoas próximas
+- Uma página web mais convicente
 - Um raio de abrangencia maior
 - Modo Station que fornece internet depois de se autenticar no Soft Access Point
 - Captura de dado sem se conectar ao computador
