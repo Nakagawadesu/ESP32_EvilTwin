@@ -2,7 +2,6 @@
  
 Este projeto é um trabalho da disciplina de Sistemas Embarcados e consiste na implementação de um ataque Evil Twin utilizando um ESP32. O objetivo é demonstrar na prática como redes Wi-Fi falsas podem ser usadas para capturar credenciais de usuários desavisados.
 
-Descrição do Projeto
 
 O código configura o ESP32 para atuar como um ponto de acesso falso (Evil Twin), replicando a identidade visual de uma rede legítima. Ao se conectar, o usuário é redirecionado para uma página de login falsa semelhante à utilizada na UTFPR, onde suas credenciais podem ser registradas para análise acadêmica e educacional sobre segurança de redes.
 
