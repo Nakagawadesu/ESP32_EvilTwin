@@ -15,8 +15,6 @@ O código configura o ESP32 para atuar como um ponto de acesso falso (Evil Twin)
 
 - Captura de credenciais: O sistema registra os dados inseridos para fins didáticos (sem uso malicioso).
 
-- Estrutura do Código
-
 ## Como Utilizar
 
 - Clone o repositório e instale o ESP-IDF:
