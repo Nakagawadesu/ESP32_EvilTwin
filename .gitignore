@@ -1,0 +1,5 @@
+/build/*
+/sdkconfig.old
+/component_depends.cmake
+serial_output.txt
+parsed_credentials.txt

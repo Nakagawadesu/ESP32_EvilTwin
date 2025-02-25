@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - UTFPR</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-family: "Open Sans", "Helvetica Neue", sans-serif;
+            font-size: 14px;
+            background-color: #fff;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .ui-card {
+            background-color: #fff;
+            color: #333;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2), 
+                        0 1px 1px 0 rgba(0, 0, 0, .14), 
+                        0 2px 1px -1px rgba(0, 0, 0, .12);
+            padding: 20px;
+            text-align: center;
+            width: 300px;
+            border-radius: 8px;
+        }
+        .logo {
+            width: 120px;
+            margin-bottom: 20px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #ffcc00;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #e6b800;
+        }
+    </style>
+</head>
+<body>
+    <div class="ui-card">
+        <!-- SVG INLINE (FUNCIONA OFFLINE) -->
+        <img class="logo" src="/logo.svg" alt="Logo UTFPR">
+
+        <!-- FORMULÁRIO DE LOGIN -->
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Usuário" required>
+            <input type="password" id="password" placeholder="Senha" required>
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
+
+    <script>
+        // Captura o formulário pelo ID
+        const loginForm = document.getElementById('loginForm');
+
+        // Adiciona um listener para o evento de submit
+        loginForm.addEventListener('submit', function(event) {
+            // Previne o comportamento padrão de recarregar a página
+            event.preventDefault();
+
+            // Captura os valores dos campos
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Cria o objeto JSON com os dados
+            const data = {
+                username: username,
+                password: password
+            };
+
+            // Envia os dados via POST usando fetch
+            fetch('/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json()) // Converte a resposta para JSON
+            .then(responseData => {
+                // Exibe a resposta do servidor no console
+                console.log('Resposta do servidor:', responseData);
+
+                // Aqui você pode adicionar lógica para tratar a resposta
+                if (responseData.success) {
+                    alert('Login bem-sucedido!');
+                    // Redireciona ou faz algo após o login
+                } else {
+                    alert('Erro no login: ' + responseData.message);
+                }
+            })
+            .catch(error => {
+                console.error('Erro ao enviar dados:', error);
+                alert('Erro ao enviar dados. Tente novamente.');
+            });
+        });
+    </script>
+</body>
+</html>
