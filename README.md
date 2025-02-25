@@ -45,3 +45,4 @@ O código original (captdns.c) foi escrito por cornelis-61 (se encontrá-lo pagu
 - Um raio de abrangencia maior
 - Modo Station que fornece internet depois de se autenticar no Soft Access Point
 - Captura de dado sem se conectar ao computador
+- Atualizar para a versão atual do esp-idf
